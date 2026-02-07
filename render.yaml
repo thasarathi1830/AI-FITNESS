@@ -22,3 +22,14 @@ services:
         sync: false # Set in dashboard
       - key: SECRET_KEY
         sync: false # Set in dashboard
+
+  - type: static
+    name: ai-fitness-frontend
+    runtime: node
+    buildCommand: npm install && npm run build
+    staticPublishPath: frontend/dist
+    rootDirectory: frontend
+    envVars:
+      - key: VITE_API_URL
+        value: https://ai-fitness-backend.onrender.com # Update this if your backend name is different
+
