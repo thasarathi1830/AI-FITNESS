@@ -3,11 +3,15 @@ services:
     name: ai-fitness-backend
     runtime: python
     region: singapore # Change to your preferred region (e.g., ohio, frankfurt)
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    buildCommand: "pip install --upgrade pip && pip install setuptools wheel && pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port 10000"
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: PIP_ONLY_BINARY
+        value: ":all:"
+      - key: PIP_NO_BUILD_ISOLATION
+        value: "false"
     rootDirectory: backend
     healthCheckPath: /
     autoDeploy: true
