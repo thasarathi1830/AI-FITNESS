@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: ai-fitness-backend
+    runtime: python
+    region: singapore # Change to your preferred region (e.g., ohio, frankfurt)
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+    rootDirectory: backend
+    healthCheckPath: /
+    autoDeploy: true
+    env:
+      - key: GEMINI_API_KEY
+        sync: false # Set in dashboard
+      - key: MONGODB_URL
+        sync: false # Set in dashboard
+      - key: SECRET_KEY
+        sync: false # Set in dashboard
