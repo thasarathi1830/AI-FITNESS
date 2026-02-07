@@ -344,10 +344,4 @@ This project is open source and available for educational and portfolio purposes
 - **React** and **Vite** for modern frontend development
 - **Tailwind CSS** for beautiful styling
 
-## 📞 Support
 
-For issues or questions, please create an issue in the GitHub repository.
-
----
-
-**Built with ❤️ using FastAPI, React, and Google Gemini AI**
